@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "863505795551",
+    "project_id": "peace-b2645",
+    "storage_bucket": "peace-b2645.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:863505795551:android:c10decb58e9544f1c91c6a",
+        "android_client_info": {
+          "package_name": "com.example.peace"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "863505795551-boksi5husfbr0ut5hol2uvbso30rosnn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA902JRdNA11YA4cQRCSKgRBYfNxclguCM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "863505795551-boksi5husfbr0ut5hol2uvbso30rosnn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
