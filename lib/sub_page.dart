@@ -26,9 +26,14 @@ class SubPageState extends State<SubPage> {
       appBar: AppBar(
         title: Text(widget.Yasai),
       ),
-      body: Container(
-        child: Image.asset(widget.image)
-      ),
+      body: Column(
+        children: [
+          Container(
+              child: Image.asset(widget.image)
+          ),
+          const Text('野菜保存方法')
+        ],
+      )
     );
   }
 }
