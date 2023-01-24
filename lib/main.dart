@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'main_page.dart';
+import 'package:peace/bottomnavi.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:peace/screens/login.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +24,19 @@ class MyAppState extends State<MyApp>{
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.green),
-      home: Yasai(),
+      home: StreamBuilder<User?>(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot){
+          if(snapshot.connectionState == ConnectionState.waiting){
+            return const SizedBox();
+          }
+          if(snapshot.hasData){
+            return Nav();
+          }
+          return Login();
+        },
+      ),
+      //home Yasai(),
     );
   }
 }
