@@ -53,6 +53,7 @@ dev_dependencies:
   firebase_core: ^2.1.1
   cloud_firestore: ^4.0.4
   firebase_auth: ^4.1.1
+  cached_network_image: ^3.2.3
 
   #追加2022/12/01
 

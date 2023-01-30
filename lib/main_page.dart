@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:peace/reusable_widgets/reusable_widgets.dart';
 import 'package:peace/sub_page.dart';
 import 'package:peace/utils/yasai_description.dart';
 
@@ -73,39 +74,7 @@ class YasaiState extends State<Yasai> {
         appBar: PreferredSize(
           child:  AppBar(
             backgroundColor:Colors.green,
-            title: SizedBox(
-              height: 40,
-              child: Container(
-                  decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(color: Colors.green),
-                  borderRadius: BorderRadius.circular(30.0),
-                  ),
 
-                child: Center(
-                  child: Container(
-                    width: 340,
-                    margin: const EdgeInsets.symmetric(vertical: 6.0),
-                    child: TextField(
-                        controller: _controller,
-                        decoration: const InputDecoration(
-                          hintText: '検索',
-                          prefixIcon: Icon(Icons.search),
-                          suffixIcon: Icon(Icons.clear),
-                          contentPadding: EdgeInsets.only(left: 8.0),
-                          enabledBorder: InputBorder.none,
-                          focusedBorder: InputBorder.none,
-                          isDense: true,
-                        ),
-                        onSubmitted: (text) => _submission(text),
-                      onChanged: (value) => setState(() {
-                        print(value);
-                      }),
-                    ),
-                  ),
-                ),
-              ),
-            ),
 
             bottom: TabBar(
               // タブのオプション
@@ -133,7 +102,7 @@ class YasaiState extends State<Yasai> {
               ],
             ),
           ),
-          preferredSize: Size.fromHeight(110),
+          preferredSize: Size.fromHeight(48),
         ),
 
         body: TabBarView(children: [

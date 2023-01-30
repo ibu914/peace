@@ -20,6 +20,7 @@ Image logoWidget2(String imageName){
     //color: Colors.white,
   );
 }
+
 //テキスト設定
 TextField reusableTextField(String text, IconData icon, bool isPasswordType,
     TextEditingController controller) {
