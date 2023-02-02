@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:peace/reusable_widgets/reusable_widgets.dart';
 import 'package:peace/sub_page.dart';
+import 'package:peace/utils/yasai_description.dart';
 
 class Yasai extends StatefulWidget{
   const Yasai({Key? key}) : super(key: key);
@@ -23,71 +25,43 @@ class YasaiState extends State<Yasai> {
   Widget build(BuildContext context) {
 
     var listall= [
-      _photoItem("kyabetu","キャベツ"),
-      _photoItem("tamanegi","タマネギ"),
-      _photoItem("jyaga","ジャガイモ"),
-      _photoItem("retasu","レタス"),
-      _photoItem("bro","ブロッコリー"),
-      _photoItem("daikon","ダイコン"),
-      _photoItem("nasu","ナスビ"),
-      _photoItem("pman","ピーマン"),
-      _photoItem("tomato","トマト"),
-      _photoItem("toumorokosi","トウモロコシ"),
-      _photoItem("kabotya","カボチャ"),
-      _photoItem("kinoko","キノコ"),
-      _photoItem("papurika","パプリカ"),
-      _photoItem("eringi","エリンギ"),
+      _photoItem(kyabetu),
+      _photoItem(tamanegi),
+      _photoItem(jyagaimo),
+      _photoItem(retasu),
+      _photoItem(bro),
+      _photoItem(daikon),
+      _photoItem(nasubi),
+      _photoItem(pman),
+      _photoItem(tomato),
+      _photoItem(toumorokosi),
+      _photoItem(kabotya),
+      _photoItem(kinoko),
+      _photoItem(papurika),
+      _photoItem(eringi),
     ];
 
     var list1 = [
-      _photoItem("kyabetu","キャベツ"),
-      _photoItem("tamanegi","タマネギ"),
-      //_photoItem("jyaga","ジャガイモ"),
-      _photoItem("retasu","レタス"),
-      //_photoItem("bro","ブロッコリー"),
-      _photoItem("daikon","ダイコン"),
-      //_photoItem("nasu","ナスビ"),
-      //_photoItem("pman","ピーマン"),
-      //_photoItem("tomato","トマト"),
-      //_photoItem("toumorokosi","トウモロコシ"),
-      //_photoItem("kabotya","カボチャ"),
-      //_photoItem("kinoko","キノコ"),
-      //_photoItem("papurika","パプリカ"),
-      //_photoItem("eringi","エリンギ"),
+      _photoItem(kyabetu),
+      _photoItem(tamanegi),
+      _photoItem(daikon),
+      _photoItem(retasu),
     ];
 
     var list2 = [
-      //_photoItem("kyabetu","キャベツ"),
-      //_photoItem("tamanegi","タマネギ"),
-      //_photoItem("jyaga","ジャガイモ"),
-      //_photoItem("retasu","レタス"),
-      _photoItem("bro","ブロッコリー"),
-      //_photoItem("daikon","ダイコン"),
-      _photoItem("nasu","ナスビ"),
-      _photoItem("pman","ピーマン"),
-      _photoItem("tomato","トマト"),
-      _photoItem("toumorokosi","トウモロコシ"),
-      _photoItem("kabotya","カボチャ"),
-      //_photoItem("kinoko","キノコ"),
-      _photoItem("papurika","パプリカ"),
-      //_photoItem("eringi","エリンギ"),
+      _photoItem(bro),
+      _photoItem(nasubi),
+      _photoItem(pman),
+      _photoItem(tomato),
+      _photoItem(toumorokosi),
+      _photoItem(kabotya),
+      _photoItem(papurika),
     ];
 
     var list3 = [
-      //_photoItem("kyabetu","キャベツ"),
-      //_photoItem("tamanegi","タマネギ"),
-      _photoItem("jyaga","ジャガイモ"),
-      //_photoItem("retasu","レタス"),
-      //_photoItem("bro","ブロッコリー"),
-      //_photoItem("daikon","ダイコン"),
-      //_photoItem("nasu","ナスビ"),
-      //_photoItem("pman","ピーマン"),
-      //_photoItem("tomato","トマト"),
-      //_photoItem("toumorokosi","トウモロコシ"),
-      //_photoItem("kabotya","カボチャ"),
-      _photoItem("kinoko","キノコ"),
-      //_photoItem("papurika","パプリカ"),
-      _photoItem("eringi","エリンギ"),
+      _photoItem(jyagaimo),
+      _photoItem(eringi),
+      _photoItem(kinoko),
     ];
 
 
@@ -96,41 +70,11 @@ class YasaiState extends State<Yasai> {
       length: 4,
 
       child:Scaffold(
+          backgroundColor: Colors.white, // 背景色設定
         appBar: PreferredSize(
           child:  AppBar(
-            title: SizedBox(
-              height: 40,
-              child: Container(
-                  decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(color: Colors.green),
-                  borderRadius: BorderRadius.circular(30.0),
-                  ),
+            backgroundColor:Colors.green,
 
-                child: Center(
-                  child: Container(
-                    width: 340,
-                    margin: const EdgeInsets.symmetric(vertical: 6.0),
-                    child: TextField(
-                        controller: _controller,
-                        decoration: const InputDecoration(
-                          hintText: '検索',
-                          prefixIcon: Icon(Icons.search),
-                          suffixIcon: Icon(Icons.clear),
-                          contentPadding: EdgeInsets.only(left: 8.0),
-                          enabledBorder: InputBorder.none,
-                          focusedBorder: InputBorder.none,
-                          isDense: true,
-                        ),
-                        onSubmitted: (text) => _submission(text),
-                      onChanged: (value) => setState(() {
-                        print(value);
-                      }),
-                    ),
-                  ),
-                ),
-              ),
-            ),
 
             bottom: TabBar(
               // タブのオプション
@@ -158,7 +102,7 @@ class YasaiState extends State<Yasai> {
               ],
             ),
           ),
-          preferredSize: Size.fromHeight(110),
+          preferredSize: Size.fromHeight(48),
         ),
 
         body: TabBarView(children: [
@@ -183,14 +127,17 @@ class YasaiState extends State<Yasai> {
       )
     );
   }
-  Widget _photoItem(String image,String Name) {
-    var assetsImage = "images/" + image + ".jpg";
+  Widget _photoItem(YasaiDesc yasai) {
+    var assetsImage = "images/" + yasai.RomanName + ".jpg";
     return GestureDetector(
         child: Card(
+          /*shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(80),
+          ),*/
           child: Column(
             children:[
               Image.asset(assetsImage, fit: BoxFit.cover,),
-              Text(Name),
+              Text(yasai.name),
             ]
           )
         ),
@@ -198,7 +145,7 @@ class YasaiState extends State<Yasai> {
           // ここにボタンを押した時に呼ばれるコードを書く
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => SubPage(Yasai: Name, image: assetsImage,)),
+            MaterialPageRoute(builder: (context) => SubPage(Yasai: yasai.name, image: assetsImage, yasaiDesc: yasai)),
           );
         },
     );
