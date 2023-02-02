@@ -31,6 +31,7 @@ class SubPageState extends State<SubPage> {
           Container(
               child: Image.asset(widget.image)
           ),
+          const Text('野菜保存方法')
         ],
       )
     );
